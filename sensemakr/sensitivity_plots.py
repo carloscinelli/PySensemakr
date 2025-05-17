@@ -24,7 +24,8 @@ def ovb_contour_plot(sense_obj=None, sensitivity_of='estimate', model=None, trea
                      benchmark_covariates=None, kd=1, ky=None, r2dz_x=None, r2yz_dx=None, bound_label=None,
                      reduce=True, estimate_threshold=0, t_threshold=2, lim=None, lim_y=None,
                      col_contour="black", col_thr_line="red", label_text=True, label_bump_x=None, label_bump_y=None,
-                     xlab=None, ylab=None, plot_margin_fraction=0.05, round_dig=3, n_levels=None):
+                     xlab=None, ylab=None, plot_margin_fraction=0.05, round_dig=3, n_levels=None,
+                     figsize=(6, 6)):
     r"""
     Contour plots of omitted variable bias for sensitivity analysis.
 
@@ -99,6 +100,8 @@ def ovb_contour_plot(sense_obj=None, sensitivity_of='estimate', model=None, trea
         rounding digit of the display numbers, default is 3.
     n_levels : int
         maximum number of countours in the plot.
+    figsize : tuple
+        figure size passed to ``matplotlib.pyplot.subplots``.
 
     Return
     -------
@@ -170,7 +173,7 @@ def ovb_contour_plot(sense_obj=None, sensitivity_of='estimate', model=None, trea
             bound_value = bias_functions.adjusted_t(r2dz_x, r2yz_dx, estimate=estimate, se=se, dof=dof,
                                                     reduce=reduce, h0=estimate_threshold)
     # TODO: see which of these params we want to include in function args list
-    fig, ax = plt.subplots(1, 1, figsize=(6, 6))
+    fig, ax = plt.subplots(1, 1, figsize=figsize)
     # Make n_levels maximum number of contour
     if(n_levels):
         n_levels=n_levels-1
@@ -385,7 +388,7 @@ def add_bound_to_contour(model=None, benchmark_covariates=None, kd=1, ky=None, r
 def ovb_extreme_plot(sense_obj=None, model=None, treatment=None, estimate=None, se=None, dof=None,
                      benchmark_covariates=None, kd=1,ky=None, r2dz_x=None, r2yz_dx=[1, 0.75, 0.5],
                      reduce=True, threshold=0, lim=None, lim_y=None,
-                     xlab=None, ylab=None):
+                     xlab=None, ylab=None, figsize=(8, 4.8)):
     r"""
     Extreme scenario plots of omitted variable bias for sensitivity analysis.
 
@@ -441,6 +444,8 @@ def ovb_extreme_plot(sense_obj=None, model=None, treatment=None, estimate=None, 
         x-axis label text.
     ylab : string
         y-axis label text.
+    figsize : tuple
+        figure size passed to ``matplotlib.pyplot.subplots``.
 
     Return
     --------
@@ -482,7 +487,7 @@ def ovb_extreme_plot(sense_obj=None, model=None, treatment=None, estimate=None, 
 
     r2d_values = np.arange(0, lim, 0.001)
 
-    fig, ax = plt.subplots(1, 1, figsize=(8, 4.8))
+    fig, ax = plt.subplots(1, 1, figsize=figsize)
     for i in range(len(r2yz_dx)):
         y=bias_functions.adjusted_estimate(r2d_values, r2yz_dx[i],
                    estimate=estimate, se=se, dof=dof)
