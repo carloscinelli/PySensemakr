@@ -88,7 +88,7 @@ def load_darfur():
 
     Return
     -------
-    dafaframe
+    dataframe
         a Pandas dataframe containing the Darfur violence data.
 
     Example
