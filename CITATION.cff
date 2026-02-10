@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "PySensemakr: Sensitivity Analysis Tools for OLS in Python"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Zhehao
+    affiliation: University of Washington
+  - family-names: LaPierre
+    given-names: Nathan
+    affiliation: University of California, Los Angeles
+  - family-names: Hill
+    given-names: Brian
+    affiliation: University of California, Los Angeles
+  - family-names: Cinelli
+    given-names: Carlos
+    orcid: "https://orcid.org/0000-0002-2021-7739"
+    affiliation: University of Washington
+repository-code: "https://github.com/carloscinelli/PySensemakr"
+license: MIT
+keywords:
+  - sensitivity analysis
+  - causal inference
+  - omitted variable bias
+  - regression
+  - Python
+preferred-citation:
+  type: article
+  title: "Making Sense of Sensitivity: Extending Omitted Variable Bias"
+  authors:
+    - family-names: Cinelli
+      given-names: Carlos
+    - family-names: Hazlett
+      given-names: Chad
+  journal: "Journal of the Royal Statistical Society: Series B (Statistical Methodology)"
+  volume: 82
+  issue: 1
+  start: 39
+  end: 67
+  year: 2020
+  doi: "10.1111/rssb.12348"
