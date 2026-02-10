@@ -72,7 +72,7 @@ analysis across the social sciences, biomedical research, and industry.
 
 The R version of `sensemakr` [@cinelli2020sensemakr] has been widely adopted across
 disciplines---including political science, economics, epidemiology, and
-education---and has been cited in hundreds of empirical studies. A Stata version
+education---and has been cited in thousands of empirical studies. A Stata version
 is also available. `PySensemakr` is a dedicated, full-featured Python implementation
 of the complete `sensemakr` methodology for OLS regression. It provides the full suite
 of sensitivity statistics (partial $R^2$, robustness values $RV_q$ and $RV_{q,\alpha}$),
