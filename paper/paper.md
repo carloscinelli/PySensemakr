@@ -70,23 +70,28 @@ analysis across the social sciences, biomedical research, and industry.
 
 # State of the Field
 
-Several Python packages address aspects of causal inference, including `DoWhy` [@dowhy],
-which provides a general framework for causal reasoning and refutation tests, and
-`EconML` [@econml], which focuses on heterogeneous treatment effect estimation using
-machine learning methods. However, these packages do not implement the OVB-based
-sensitivity analysis framework of @cinelli2020making, which is specifically designed
-for quantifying the robustness of regression estimates to unobserved confounding.
+Several Python packages address aspects of causal inference and sensitivity analysis.
+`DoWhy` [@dowhy] provides a general framework for causal reasoning and includes,
+since version 0.8, a partial $R^2$-based sensitivity analysis option within its
+refutation module that draws on the methodology of @cinelli2020making.
+`EconML` [@econml] focuses on heterogeneous treatment effect estimation using
+machine learning methods and has recently added sensitivity analysis capabilities
+for select estimators. These implementations, however, embed sensitivity analysis
+as one component of a larger causal inference pipeline, and are not designed as
+standalone tools for the detailed, routine reporting of sensitivity statistics
+in the OLS regression setting.
 
-The R version of `sensemakr` [@cinelli2020sensemakr] has been widely adopted across
-disciplines---including political science, economics, epidemiology, and
-education---and has been cited in hundreds of empirical studies. A Stata version
-is also available. `PySensemakr` extends this cross-platform availability to Python,
-using an API that closely mirrors the R version, thereby lowering the barrier for
-researchers who wish to incorporate formal sensitivity analysis into Python-based workflows.
-Rather than duplicating the functionality of existing Python causal inference packages,
-`PySensemakr` complements them by providing a dedicated tool for a specific and
-well-defined task: quantifying the robustness of linear regression estimates to
-unobserved confounding.
+`PySensemakr` is a dedicated, full-featured implementation of the complete
+`sensemakr` methodology for OLS regression. It provides the full suite of
+sensitivity statistics (partial $R^2$, robustness values $RV_q$ and $RV_{q,\alpha}$),
+the complete benchmarking apparatus, all bias-adjustment functions, and all
+visualization tools (contour plots and extreme scenario plots), with an API that
+closely mirrors the R version of `sensemakr` [@cinelli2020sensemakr]. The R version
+has been widely adopted across disciplines---including political science, economics,
+epidemiology, and education---and has been cited in hundreds of empirical studies.
+`PySensemakr` brings this same dedicated toolkit to the Python ecosystem, lowering
+the barrier for researchers who wish to incorporate formal sensitivity analysis
+into Python-based regression workflows.
 
 # Software Design
 
