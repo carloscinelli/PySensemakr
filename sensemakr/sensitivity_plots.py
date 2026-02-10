@@ -625,8 +625,8 @@ def extract_from_model(model, treatment, benchmark_covariates, kd, ky, r2dz_x, r
         sys.exit('Error: treatment must be a single string.')
 
     model_data = sensitivity_statistics.model_helper(model, covariates=treatment)
-    estimate = model_data['estimate']
-    se = model_data['se']
+    estimate = list(model_data['estimate'])[0]
+    se = list(model_data['se'])[0]
     dof = model_data['dof']
     try:
         estimate, se = float(estimate), float(se)
