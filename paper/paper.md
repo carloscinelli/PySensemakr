@@ -147,6 +147,12 @@ tools to the large and growing community of researchers and data scientists who
 use Python as their primary computing environment, thereby helping to make formal
 sensitivity analysis a routine component of empirical research workflows.
 
+# AI Usage Disclosure
+
+Generative AI tools were used to assist with code maintenance tasks (e.g., updating deprecated
+API calls for compatibility with newer versions of dependencies). All AI-generated changes
+were reviewed and tested by the authors.
+
 # Acknowledgements
 
 We thank Chad Hazlett and Jeremy Ferwerda for their contributions to the theoretical
